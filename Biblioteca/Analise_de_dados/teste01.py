@@ -29,15 +29,30 @@ data = pd.DataFrame(row, columns=['produto', 'valor'])
 names = data['produto']
 values = data['valor']
 
+# usando matplotlib
+
+# python teste01.py
 
 fig, axs = plt.subplots(1, 3, figsize=(5, 5), sharey=True)
+
 axs[0].bar(names, values)
 axs[1].scatter(names, values)
 axs[2].plot(names, values)
 fig.suptitle('Categoria')
+
+# rotacionando as labels de cada gráfico
+
+labels = axs[0].get_xticklabels()
+plt.setp(labels, rotation=45, horizontalalignment='right')
+
+labels = axs[1].get_xticklabels()
+plt.setp(labels, rotation=45, horizontalalignment='right')
+
+labels = axs[2].get_xticklabels()
+plt.setp(labels, rotation=45, horizontalalignment='right')
+    
+
 plt.show()
-
-
 
 
 
